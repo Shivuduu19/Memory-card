@@ -8,6 +8,7 @@ const Main = () => {
   const PokemonsAmount = 16;
   const [pokemons, setPokemons] = useState([]);
   const [clickedPokemons, setClickedPokemons] = useState([]);
+  const [loading, setLoading] = useState(true);
   // console.log(typeof pokemons);
   // console.log(typeof clickedPokemons);
   const [bestScore, setBestScore] = useState(0);
@@ -15,6 +16,7 @@ const Main = () => {
   useEffect(() => {
     const loadCards = async () => {
       setPokemons(shufflePokemons(await fetchPokemons(PokemonsAmount)));
+      setLoading(false);
       // console.log(pokemons);
     };
     loadCards();
@@ -63,14 +65,20 @@ const Main = () => {
   };
   return (
     <MainWrapper>
-      <ScoreBoard
-        currentScore={currentScore}
-        bestScore={bestScore}
-      ></ScoreBoard>
-      <CardGrid
-        pokemons={pokemons}
-        handleCardClick={handleCardClick}
-      ></CardGrid>
+      {loading ? (
+        <h1>Loading ...</h1>
+      ) : (
+        <>
+          <ScoreBoard
+            currentScore={currentScore}
+            bestScore={bestScore}
+          ></ScoreBoard>
+          <CardGrid
+            pokemons={pokemons}
+            handleCardClick={handleCardClick}
+          ></CardGrid>
+        </>
+      )}
     </MainWrapper>
   );
 };
