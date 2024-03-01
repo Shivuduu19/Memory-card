@@ -15,6 +15,8 @@ const CardWrapper = styled.div`
   width: 200px;
   height: 200px;
   border-radius: 40px;
+  padding-bottom: 4rem;
+
   background-color: #cfd4d8;
   display: flex;
   flex-direction: column;
@@ -23,6 +25,10 @@ const CardWrapper = styled.div`
   font-weight: 600;
   &:hover {
     background-color: #606162;
+  }
+  @media (max-width: 450px) {
+    width: 150px;
+    height: 150px;
   }
 `;
 const Image = styled.img`

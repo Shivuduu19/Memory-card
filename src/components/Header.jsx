@@ -13,10 +13,13 @@ const HeadWrapper = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  background-color: #40aa79;
 `;
 const Logo = styled.img`
   max-width: 710px;
+  @media (max-width: 450px) {
+    width: 100%;
+  }
 `;
 
 export default Header;

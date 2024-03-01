@@ -67,11 +67,11 @@ const Main = () => {
       const newScore = currentScore + 1;
       setCurrentScore(newScore);
       if (newScore > bestScore) setBestScore(newScore);
-      console.log(pokemonName);
+      // console.log(pokemonName);
       setClickedPokemons([...clickedPokemons, pokemonName]);
-      console.log(pokemonName);
+      // console.log(pokemonName);
     }
-    console.log(clickedPokemons);
+    // console.log(clickedPokemons);
   };
 
   // reset game
@@ -103,7 +103,9 @@ const Main = () => {
 
 const MainWrapper = styled.main`
   display: flex;
-  /* flex-direction: column; */
+  @media (max-width: 450px) {
+    flex-direction: column;
+  }
   align-items: center;
   justify-content: center;
   gap: 5rem;
