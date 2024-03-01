@@ -14,13 +14,14 @@ const ScoreBoardWrapper = styled.div`
   gap: 10px;
   justify-content: center;
   align-items: center;
-  width: 30%;
+  width: 30vb;
   font-size: xx-large;
 `;
 const Score = styled.div`
   padding: 2rem;
-  width: 40%;
   border-radius: 25%;
+  width: 100%;
+  text-align: center;
   font: 2rem;
 `;
 const CurrentScore = styled(Score)`

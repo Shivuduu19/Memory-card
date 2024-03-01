@@ -106,7 +106,7 @@ const MainWrapper = styled.main`
   /* flex-direction: column; */
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 5rem;
   padding: 3rem;
 `;
 
