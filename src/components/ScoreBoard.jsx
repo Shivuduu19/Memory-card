@@ -14,7 +14,7 @@ const ScoreBoardWrapper = styled.div`
   gap: 10px;
   justify-content: center;
   align-items: center;
-  width: 30vb;
+  width: 30vw;
   font-size: xx-large;
 `;
 const Score = styled.div`
