@@ -12,8 +12,8 @@ const Card = ({ pokemon, handleCardClick }) => {
   );
 };
 const CardWrapper = styled.div`
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 40px;
   background-color: #cfd4d8;
   display: flex;
