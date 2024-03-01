@@ -12,12 +12,23 @@ const Card = ({ pokemon, handleCardClick }) => {
   );
 };
 const CardWrapper = styled.div`
-  width: 150px;
+  width: 250px;
+  height: 250px;
+  border-radius: 40px;
+  background-color: #cfd4d8;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: larger;
+  font-weight: 600;
+  &:hover {
+    background-color: #606162;
+  }
 `;
 const Image = styled.img`
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
 `;
 const Name = styled.p`
-  padding: 0%.5rem;
+  /* padding: 0%.5rem; */
 `;
 export default Card;

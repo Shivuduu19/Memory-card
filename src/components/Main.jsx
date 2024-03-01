@@ -4,15 +4,20 @@ import ScoreBoard from "./ScoreBoard";
 import CardGrid from "./cardsGrid/CardGrid";
 import styled from "styled-components";
 
+// main content
+
 const Main = () => {
   const PokemonsAmount = 16;
+
   const [pokemons, setPokemons] = useState([]);
   const [clickedPokemons, setClickedPokemons] = useState([]);
+
   const [loading, setLoading] = useState(true);
   // console.log(typeof pokemons);
   // console.log(typeof clickedPokemons);
   const [bestScore, setBestScore] = useState(0);
   const [currentScore, setCurrentScore] = useState(0);
+
   useEffect(() => {
     const loadCards = async () => {
       setPokemons(shufflePokemons(await fetchPokemons(PokemonsAmount)));
@@ -21,6 +26,9 @@ const Main = () => {
     };
     loadCards();
   }, []);
+
+  // fetching cards
+
   const fetchPokemons = async (amount) => {
     const pokemons = [];
     for (let i = 1; i <= amount; i++) {
@@ -36,14 +44,20 @@ const Main = () => {
     // console.log(clickedPokemons);
     return pokemons;
   };
+
+  // shuffling fetched data
+
   const shufflePokemons = (array) => {
     return [...array].sort(() => Math.random() - 0.4);
   };
+
   const handleCardClick = (e) => {
     const pokemonName = e.target.parentNode.lastChild.textContent;
     gamePlay(pokemonName);
     setPokemons(shufflePokemons(pokemons));
   };
+  //  game logic
+
   const gamePlay = (pokemonName) => {
     // console.log(pokemonName);
     // console.log(clickedPokemons);
@@ -59,10 +73,14 @@ const Main = () => {
     }
     console.log(clickedPokemons);
   };
+
+  // reset game
+
   const resetGame = () => {
     setCurrentScore(0);
     setClickedPokemons([]);
   };
+
   return (
     <MainWrapper>
       {loading ? (
